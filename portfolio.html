@@ -48,6 +48,7 @@
         <div class="modalSide">
           <div class="title" id="mTitle2" style="font-size:18px">—</div>
           <div class="small" id="mCat" style="margin-top:6px">—</div>
+          <div class="small" id="mDesc" style="margin-top:12px;line-height:1.5;white-space:pre-wrap">—</div>
           <div class="small" style="margin-top:14px">
             문의: <a href="mailto:plutonostudio@gmail.com">plutonostudio@gmail.com</a>
           </div>
@@ -71,6 +72,7 @@
   const mTitle = document.getElementById('mTitle');
   const mTitle2 = document.getElementById('mTitle2');
   const mCat = document.getElementById('mCat');
+  const mDesc = document.getElementById('mDesc');
 
   function openModal(c){
     mImg.src = c.file;
@@ -78,6 +80,7 @@
     mTitle.textContent = c.title;
     mTitle2.textContent = c.title;
     mCat.textContent = c.category || '';
+    mDesc.textContent = c.description || '';
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
   }
