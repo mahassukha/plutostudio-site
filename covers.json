@@ -2,51 +2,61 @@
   {
     "file": "images/cover_001.jpg",
     "title": "The Secret Life Of Painters",
-    "category": "Book Cover"
+    "category": "현대 로맨스",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_002.jpg",
-    "title": "Cover 02",
-    "category": "Book Cover"
+    "title": "반만 넣어줄래요",
+    "category": "BL",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_003.jpg",
-    "title": "Cover 03",
-    "category": "Book Cover"
+    "title": "다정의 정원",
+    "category": "BL",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_004.jpg",
-    "title": "Cover 04",
-    "category": "Book Cover"
+    "title": "우뢰매",
+    "category": "판타지",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_005.jpg",
     "title": "Cover 05",
-    "category": "Book Cover"
+    "category": "Book Cover",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_006.jpg",
     "title": "Cover 06",
-    "category": "Book Cover"
+    "category": "Book Cover",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_007.jpg",
     "title": "Cover 07",
-    "category": "Book Cover"
+    "category": "Book Cover",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_008.jpg",
     "title": "Cover 08",
-    "category": "Book Cover"
+    "category": "Book Cover",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_009.jpg",
     "title": "Cover 09",
-    "category": "Book Cover"
+    "category": "Book Cover",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   },
   {
     "file": "images/cover_010.jpg",
     "title": "Cover 10",
-    "category": "Book Cover"
+    "category": "Book Cover",
+    "description": "장르: 미스터리 / 키워드: 어둠, 긴장감 / 작업 포인트: 강한 대비와 타이포그래피"
   }
 ]
