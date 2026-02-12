@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio · PLUTO STUDIO</title>
+  <meta name="description" content="PLUTO STUDIO — Book Cover Design Portfolio">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="portfolio">
+  <div class="nav">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a class="brand" href="index.html">PLUTO STUDIO</a>
+      <div class="menu">
+        <a href="portfolio.html" data-nav="portfolio">Portfolio</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const page = document.body.getAttribute('data-page');
+      document.querySelectorAll('.menu a').forEach(a => {
+        if (a.dataset.nav === page) a.classList.add('active');
+      });
+    })();
+  </script>
+
+  <div class="container">
+    <div style="padding:26px 0 8px">
+      <div class="kicker">Portfolio</div>
+      <div class="h1" style="font-size:36px;margin-top:8px">Book Cover Gallery</div>
+      <p class="small">이미지를 클릭하면 크게 볼 수 있습니다.</p>
+    </div>
+
+    <div id="gallery" class="grid"></div>
+  </div>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalContent" role="dialog" aria-modal="true">
+      <div class="modalTop">
+        <div class="t" id="mTitle">Cover</div>
+        <button class="close" id="mClose">Close</button>
+      </div>
+      <div class="modalBody">
+        <img id="mImg" src="" alt="">
+        <div class="modalSide">
+          <div class="title" id="mTitle2" style="font-size:18px">—</div>
+          <div class="small" id="mCat" style="margin-top:6px">—</div>
+          <div class="small" style="margin-top:14px">
+            문의: <a href="mailto:plutonostudio@gmail.com">plutonostudio@gmail.com</a>
+          </div>
+          <div class="small" style="margin-top:10px">
+            TIP: 새 표지를 추가할 때는 <b>images/</b>에 업로드 후 <b>covers.json</b>에 한 줄만 추가하면 됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">© <span id="year"></span> PLUTO STUDIO</div>
+  </div>
+
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const modal = document.getElementById('modal');
+  const mImg = document.getElementById('mImg');
+  const mTitle = document.getElementById('mTitle');
+  const mTitle2 = document.getElementById('mTitle2');
+  const mCat = document.getElementById('mCat');
+
+  function openModal(c){
+    mImg.src = c.file;
+    mImg.alt = c.title;
+    mTitle.textContent = c.title;
+    mTitle2.textContent = c.title;
+    mCat.textContent = c.category || '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+  }
+  document.getElementById('mClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+
+  fetch('covers.json')
+    .then(r => r.json())
+    .then(items => {
+      const el = document.getElementById('gallery');
+      el.innerHTML = items.map((c, i) => `
+        <div class="card" data-i="${i}">
+          <img src="${c.file}" alt="${c.title}">
+          <div class="meta">
+            <div class="title">${c.title}</div>
+            <div class="sub">${c.category || ''}</div>
+          </div>
+        </div>
+      `).join('');
+
+      // click handlers
+      el.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          const idx = Number(card.dataset.i);
+          openModal(items[idx]);
+          location.hash = idx;
+        });
+      });
+
+      // open by hash
+      if(location.hash){
+        const idx = Number(location.hash.replace('#',''));
+        if(!Number.isNaN(idx) && items[idx]) openModal(items[idx]);
+      }
+    });
+  </script>
+</body>
+</html>

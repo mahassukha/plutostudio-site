@@ -1,0 +1,52 @@
+[
+  {
+    "file": "images/cover_001.jpg",
+    "title": "The Secret Life Of Painters",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_002.jpg",
+    "title": "Cover 02",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_003.jpg",
+    "title": "Cover 03",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_004.jpg",
+    "title": "Cover 04",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_005.jpg",
+    "title": "Cover 05",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_006.jpg",
+    "title": "Cover 06",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_007.jpg",
+    "title": "Cover 07",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_008.jpg",
+    "title": "Cover 08",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_009.jpg",
+    "title": "Cover 09",
+    "category": "Book Cover"
+  },
+  {
+    "file": "images/cover_010.jpg",
+    "title": "Cover 10",
+    "category": "Book Cover"
+  }
+]

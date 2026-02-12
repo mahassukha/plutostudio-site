@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · PLUTO STUDIO</title>
+  <meta name="description" content="PLUTO STUDIO — Book Cover Design Portfolio">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+  <div class="nav">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a class="brand" href="index.html">PLUTO STUDIO</a>
+      <div class="menu">
+        <a href="portfolio.html" data-nav="portfolio">Portfolio</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const page = document.body.getAttribute('data-page');
+      document.querySelectorAll('.menu a').forEach(a => {
+        if (a.dataset.nav === page) a.classList.add('active');
+      });
+    })();
+  </script>
+
+  <div class="container">
+    <div style="padding:26px 0 8px">
+      <div class="kicker">Contact</div>
+      <div class="h1" style="font-size:36px;margin-top:8px">Let’s work together</div>
+      <p class="small">메일로 편하게 문의 주세요. 가능한 빠르게 답변드리겠습니다.</p>
+    </div>
+
+    <div class="aboutBox">
+      <div class="sectionTitle" style="margin-top:0">Email</div>
+      <p style="margin:6px 0 14px;color:var(--muted)">
+        아래 버튼을 누르면 메일 작성 화면이 열립니다.
+      </p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:plutonostudio@gmail.com?subject=Book%20Cover%20Design%20Inquiry">plutonostudio@gmail.com</a>
+        <a class="btn" href="portfolio.html">View Portfolio</a>
+      </div>
+      <p class="small" style="margin-top:16px">
+        문의 시 포함하면 좋은 정보: 책 제목, 장르, 분량(대략), 키워드/분위기, 참고 레퍼런스, 일정(마감일).
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">© <span id="year"></span> PLUTO STUDIO</div>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

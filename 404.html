@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not Found · PLUTO STUDIO</title>
+  <meta name="description" content="PLUTO STUDIO — Book Cover Design Portfolio">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="nav">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a class="brand" href="index.html">PLUTO STUDIO</a>
+      <div class="menu">
+        <a href="portfolio.html" data-nav="portfolio">Portfolio</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const page = document.body.getAttribute('data-page');
+      document.querySelectorAll('.menu a').forEach(a => {
+        if (a.dataset.nav === page) a.classList.add('active');
+      });
+    })();
+  </script>
+
+  <div class="container">
+    <div style="padding:54px 0">
+      <div class="h1" style="font-size:40px">404</div>
+      <p class="small">페이지를 찾을 수 없습니다. <a href="index.html" style="color:var(--accent)">홈으로</a> 돌아가세요.</p>
+    </div>
+  </div>
+</body></html>

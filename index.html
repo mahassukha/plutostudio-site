@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home · PLUTO STUDIO</title>
+  <meta name="description" content="PLUTO STUDIO — Book Cover Design Portfolio">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="nav">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a class="brand" href="index.html">PLUTO STUDIO</a>
+      <div class="menu">
+        <a href="portfolio.html" data-nav="portfolio">Portfolio</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const page = document.body.getAttribute('data-page');
+      document.querySelectorAll('.menu a').forEach(a => {
+        if (a.dataset.nav === page) a.classList.add('active');
+      });
+    })();
+  </script>
+
+  <div class="container">
+    <div class="hero">
+      <div class="kicker">Book Cover Designer</div>
+      <div class="h1">PLUTO STUDIO</div>
+      <p class="lead">
+        책의 첫인상을 만드는 표지 디자인을 합니다. 장르와 톤에 맞춘 시각 언어로,
+        독자가 “이 책을 펼치고 싶다”는 감정을 느끼게 하는 커버를 만듭니다.
+      </p>
+      <div class="btns">
+        <a class="btn primary" href="portfolio.html">View Portfolio</a>
+        <a class="btn" href="contact.html">Email Inquiry</a>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <span class="badge">심플 · 고급 · 이미지 중심</span>
+        <span class="badge">작품 갤러리 + About + 문의</span>
+        <span class="badge">GitHub Pages 운영</span>
+      </div>
+    </div>
+
+    <div class="sectionTitle">Featured Covers</div>
+    <div id="featured" class="grid"></div>
+  </div>
+
+  <div class="footer">
+    <div class="container">© <span id="year"></span> PLUTO STUDIO · Contact: <a href="mailto:plutonostudio@gmail.com">plutonostudio@gmail.com</a></div>
+  </div>
+
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  fetch('covers.json')
+    .then(r => r.json())
+    .then(items => items.slice(0,6))
+    .then(items => {
+      const el = document.getElementById('featured');
+      el.innerHTML = items.map((c, i) => `
+        <a class="card" href="portfolio.html#${i}">
+          <img src="${c.file}" alt="${c.title}">
+          <div class="meta">
+            <div class="title">${c.title}</div>
+            <div class="sub">${c.category || ''}</div>
+          </div>
+        </a>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
